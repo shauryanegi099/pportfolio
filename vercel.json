@@ -1,0 +1,6 @@
+{
+  "outputDirectory": "bewildered-office-891144.framer.app",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
+}

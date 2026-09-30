@@ -78,6 +78,22 @@
     var badge = document.getElementById('__framer-badge-container');
     if (badge) badge.setAttribute('style', 'display:none!important');
 
+    // 4b2. Star (Plus) click handlers in hero
+    var LINKEDIN_URL = 'https://www.linkedin.com/in/prekshabaid001';
+    var RESUME_URL   = '../portfolio-pdfs/preksha baid resume.pdf';
+    var starEls = document.querySelectorAll('[data-framer-name="Plus"]');
+    starEls.forEach(function(star, idx) {
+      if (star.dataset.linkedUp) return;
+      star.dataset.linkedUp = '1';
+      star.style.cursor = 'pointer';
+      star.style.pointerEvents = 'auto';
+      var url = (idx % 2 === 0) ? LINKEDIN_URL : RESUME_URL;
+      star.addEventListener('click', function(e) {
+        e.stopPropagation();
+        window.open(url, '_blank');
+      });
+    });
+
     // 4c. "PROJECTS" label in left sidebar
     var sidebar = document.querySelector('.framer-wutr65');
     if (sidebar && !sidebar.querySelector('.proj-label')) {

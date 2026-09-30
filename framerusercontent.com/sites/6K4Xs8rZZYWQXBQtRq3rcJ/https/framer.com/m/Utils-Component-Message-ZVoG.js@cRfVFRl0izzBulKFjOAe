@@ -1,0 +1,8 @@
+/*
+ * Utils/Component Message
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/fMDE7Cqb2uOvQFAHEP2m/cRfVFRl0izzBulKFjOAe/W7oLCU4_B.js"
+export { default } from "https://framerusercontent.com/modules/fMDE7Cqb2uOvQFAHEP2m/cRfVFRl0izzBulKFjOAe/W7oLCU4_B.js"

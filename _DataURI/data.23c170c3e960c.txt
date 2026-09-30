@@ -1,0 +1,23 @@
+import * as React from /*"react"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/42cb2ed1-a23c-4f40-9412-9db6de069d12';
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const l = ()=>letters[Math.floor(Math.random() * letters.length)]
+;
+export const randomID = ()=>l() + l() + l() + l() + l() + l() + l() + l() + l()
+;
+function createUniqueClass(suffix) {
+    return `framer-${suffix}-${randomID()}`;
+}
+export function useUniqueClassName(suffix, deps) {
+    const [className, setClassName] = React.useState(createUniqueClass(suffix));
+    React.useEffect(()=>{
+        setClassName(createUniqueClass(suffix));
+    }, [
+        suffix,
+        ...deps
+    ]);
+    return className;
+}
+
+export const __FramerMetadata__ = {"exports":{"useUniqueClassName":{"type":"function","annotations":{"framerContractVersion":"1"}},"randomID":{"type":"variable","annotations":{"framerContractVersion":"1"}}}}
+//# sourceMappingURL=https://framerusercontent.com/modules/xDiQsqBGXzmMsv7AlEVy/uhunpMiNsbXxzjlXsg1y/useUniqueClassName.map
+//# sourceURL=https://framerusercontent.com/modules/xDiQsqBGXzmMsv7AlEVy/uhunpMiNsbXxzjlXsg1y/useUniqueClassName.js

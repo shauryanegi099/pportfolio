@@ -1,0 +1,53 @@
+import { useCallback, useEffect, useRef } from /*"react"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/42cb2ed1-a23c-4f40-9412-9db6de069d12';
+import { motionValue, animate, RenderTarget } from /*"framer"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/a7a92758-e9b8-4776-ac7c-f47c05a495ba';
+// @ts-ignore
+import { isMotionValue } from /*"https://framerusercontent.com/modules/3mKFSGQqKHV82uOV1eBc/5fbRLvOpxZC0JOXugvwm/isMotionValue.js"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/6359a756-863a-4ae1-8802-94747792e8d6';
+// @ts-ignore
+import { useConstant } from /*"https://framerusercontent.com/modules/ExNgrA7EJTKUPpH6vIlN/eiOrSJ2Ab5M9jPCvVwUz/useConstant.js"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/7ddf33f9-ebe1-4060-b2cb-d4f85514bc4f';
+export function useAutoMotionValue(inputValue, options) {
+    var ref;
+    // Put options on a local ref
+    // Might wanna just memo instead but it works for now
+    const optionsRef = useRef(options);
+    const animation = useRef();
+    const didInitialMount = useRef(false);
+    const isOnCanvas = RenderTarget.current() === RenderTarget.canvas;
+    // in-progress - trying to figure out effect hooks
+    const onChangeDeps = (options === null || options === void 0 ? void 0 : options.onChangeDeps) ? options.onChangeDeps : [];
+    // Memoize the onChange handler
+    const onChange = useCallback(options === null || options === void 0 ? void 0 : options.onChange, [
+        ...onChangeDeps, 
+    ]);
+    // Optionally scale the value from props
+    const transformer = useCallback((value)=>((ref = optionsRef.current) === null || ref === void 0 ? void 0 : ref.transform) ? optionsRef.current.transform(value) : value
+    , []);
+    // Create new MotionValue from inputValue
+    const value = useConstant(()=>isMotionValue(inputValue) ? inputValue : motionValue(transformer(inputValue))
+    );
+    // Setting value from prop change
+    useEffect(()=>{
+        if (!isMotionValue(inputValue) && didInitialMount.current) {
+            var ref1, ref2;
+            const newValue = transformer(inputValue);
+            (ref1 = animation.current) === null || ref1 === void 0 ? void 0 : ref1.stop();
+            // Call change callback
+            if (onChange) onChange(newValue, value);
+            // Trigger animation to new value
+            if (((ref2 = optionsRef.current) === null || ref2 === void 0 ? void 0 : ref2.animate) && !isOnCanvas) {
+                var ref3;
+                // @ts-ignore
+                animation.current = animate(value, newValue, (ref3 = optionsRef.current) === null || ref3 === void 0 ? void 0 : ref3.transition);
+            } else {
+                value.set(newValue);
+            }
+        }
+        didInitialMount.current = true;
+    }, [
+        inputValue,
+        ...onChangeDeps
+    ]);
+    return value;
+}
+
+export const __FramerMetadata__ = {"exports":{"useAutoMotionValue":{"type":"function","annotations":{"framerContractVersion":"1"}}}}
+//# sourceURL=https://framerusercontent.com/modules/kNDwabfjDEb3vUxkQlZS/fSIr3AOAYbGlfSPgXpYu/useAutoMotionValue.js

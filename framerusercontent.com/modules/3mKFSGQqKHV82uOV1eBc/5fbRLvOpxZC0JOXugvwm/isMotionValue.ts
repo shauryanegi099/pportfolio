@@ -1,0 +1,4 @@
+import { MotionValue } from "framer"
+
+export const isMotionValue = (v: any): v is MotionValue =>
+    v instanceof MotionValue

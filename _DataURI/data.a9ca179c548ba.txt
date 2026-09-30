@@ -1,0 +1,18 @@
+import { useRef } from /*"react"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/42cb2ed1-a23c-4f40-9412-9db6de069d12';
+/**
+ * Creates a constant value over the lifecycle of a component.
+ *
+ * Even if `useMemo` is provided an empty array as its final argument, it doesn't offer
+ * a guarantee that it won't re-run for performance reasons later on. By using `useConstant`
+ * you can ensure that initialisers don't execute twice or more.
+ */ export function useConstant(init) {
+    const ref = useRef(null);
+    if (ref.current === null) {
+        ref.current = init();
+    }
+    return ref.current;
+}
+
+export const __FramerMetadata__ = {"exports":{"useConstant":{"type":"function","annotations":{"framerContractVersion":"1"}}}}
+//# sourceMappingURL=https://framerusercontent.com/modules/ExNgrA7EJTKUPpH6vIlN/eiOrSJ2Ab5M9jPCvVwUz/useConstant.map
+//# sourceURL=https://framerusercontent.com/modules/ExNgrA7EJTKUPpH6vIlN/eiOrSJ2Ab5M9jPCvVwUz/useConstant.js

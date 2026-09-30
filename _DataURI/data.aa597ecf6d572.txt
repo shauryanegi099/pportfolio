@@ -1,0 +1,20 @@
+import { useIsInCurrentNavigationTarget } from /*"framer"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/a7a92758-e9b8-4776-ac7c-f47c05a495ba';
+import { useEffect } from /*"react"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/42cb2ed1-a23c-4f40-9412-9db6de069d12';
+export function useOnEnter(onEnter, enabled) {
+    return useOnSpecificTargetChange(true, onEnter, enabled);
+}
+export function useOnExit(onExit, enabled) {
+    return useOnSpecificTargetChange(false, onExit, enabled);
+}
+function useOnSpecificTargetChange(goal, callback, enabled = true) {
+    const isInTarget = useIsInCurrentNavigationTarget();
+    useEffect(()=>{
+        if (enabled && isInTarget === goal) callback();
+    }, [
+        isInTarget
+    ]);
+}
+
+export const __FramerMetadata__ = {"exports":{"useOnEnter":{"type":"function","annotations":{"framerContractVersion":"1"}},"useOnExit":{"type":"function","annotations":{"framerContractVersion":"1"}}}}
+//# sourceMappingURL=https://framerusercontent.com/modules/D4TWeLfcxT6Tysr2BlYg/iZjmqdxVx1EOiM3k1FaW/useOnNavigationTargetChange.map
+//# sourceURL=https://framerusercontent.com/modules/D4TWeLfcxT6Tysr2BlYg/iZjmqdxVx1EOiM3k1FaW/useOnNavigationTargetChange.js

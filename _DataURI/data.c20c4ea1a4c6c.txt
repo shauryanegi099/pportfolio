@@ -1,0 +1,15 @@
+import { useMemo } from /*"react"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/42cb2ed1-a23c-4f40-9412-9db6de069d12';
+export const isBrowserSafari = ()=>{
+    if (typeof navigator !== `undefined`) {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isSafari = (userAgent.indexOf("safari") > -1 || userAgent.indexOf("framermobile") > -1 || userAgent.indexOf("framerx") > -1) && userAgent.indexOf("chrome") < 0;
+        return isSafari;
+    } else return false;
+};
+export const useIsBrowserSafari = ()=>useMemo(()=>isBrowserSafari()
+    , [])
+;
+
+export const __FramerMetadata__ = {"exports":{"useIsBrowserSafari":{"type":"variable","annotations":{"framerContractVersion":"1"}},"isBrowserSafari":{"type":"variable","annotations":{"framerContractVersion":"1"}}}}
+//# sourceMappingURL=https://framerusercontent.com/modules/eMBrwoqQK7h6mEeGQUH8/GuplvPJVjmxpk9zqOTcb/isBrowser.map
+//# sourceURL=https://framerusercontent.com/modules/eMBrwoqQK7h6mEeGQUH8/GuplvPJVjmxpk9zqOTcb/isBrowser.js

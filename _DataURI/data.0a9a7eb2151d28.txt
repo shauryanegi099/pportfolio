@@ -1,0 +1,17 @@
+import * as React from /*"react"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/42cb2ed1-a23c-4f40-9412-9db6de069d12';
+export function useControlledState(value) {
+    const [controlledValue, setValue] = React.useState(value);
+    React.useEffect(()=>{
+        setValue(value);
+    }, [
+        value
+    ]);
+    return [
+        controlledValue,
+        setValue
+    ];
+}
+
+export const __FramerMetadata__ = {"exports":{"useControlledState":{"type":"function","annotations":{"framerContractVersion":"1"}}}}
+//# sourceMappingURL=https://framerusercontent.com/modules/zGkoP8tPDCkoBzMdt5uq/0zFSjxIYliHxrQQnryFX/useControlledState.map
+//# sourceURL=https://framerusercontent.com/modules/zGkoP8tPDCkoBzMdt5uq/0zFSjxIYliHxrQQnryFX/useControlledState.js

@@ -1,0 +1,80 @@
+import { useMemo } from /*"react"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/42cb2ed1-a23c-4f40-9412-9db6de069d12';
+import { ControlType } from /*"framer"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/a7a92758-e9b8-4776-ac7c-f47c05a495ba';
+export function useRadius(props) {
+    const { borderRadius , isMixedBorderRadius , topLeftRadius , topRightRadius , bottomRightRadius , bottomLeftRadius ,  } = props;
+    const radiusValue = useMemo(()=>isMixedBorderRadius ? `${topLeftRadius}px ${topRightRadius}px ${bottomRightRadius}px ${bottomLeftRadius}px` : `${borderRadius}px`
+    , [
+        borderRadius,
+        isMixedBorderRadius,
+        topLeftRadius,
+        topRightRadius,
+        bottomRightRadius,
+        bottomLeftRadius, 
+    ]);
+    return radiusValue;
+}
+export const borderRadiusControl = {
+    borderRadius: {
+        title: "Radius",
+        type: ControlType.FusedNumber,
+        toggleKey: "isMixedBorderRadius",
+        toggleTitles: [
+            "Radius",
+            "Radius per corner"
+        ],
+        valueKeys: [
+            "topLeftRadius",
+            "topRightRadius",
+            "bottomRightRadius",
+            "bottomLeftRadius", 
+        ],
+        valueLabels: [
+            "TL",
+            "TR",
+            "BR",
+            "BL"
+        ],
+        min: 0
+    }
+};
+export function usePadding(props) {
+    const { padding , paddingPerSide , paddingTop , paddingRight , paddingBottom , paddingLeft ,  } = props;
+    const paddingValue = useMemo(()=>paddingPerSide ? `${paddingTop}px ${paddingRight}px ${paddingBottom}px ${paddingLeft}px` : padding
+    , [
+        padding,
+        paddingPerSide,
+        paddingTop,
+        paddingRight,
+        paddingBottom,
+        paddingLeft, 
+    ]);
+    return paddingValue;
+}
+export const paddingControl = {
+    padding: {
+        type: ControlType.FusedNumber,
+        toggleKey: "paddingPerSide",
+        toggleTitles: [
+            "Padding",
+            "Padding per side"
+        ],
+        valueKeys: [
+            "paddingTop",
+            "paddingRight",
+            "paddingBottom",
+            "paddingLeft", 
+        ],
+        valueLabels: [
+            "T",
+            "R",
+            "B",
+            "L"
+        ],
+        min: 0,
+        title: "Padding"
+    }
+};
+
+export const __FramerMetadata__ = {"exports":{"borderRadiusControl":{"type":"variable","annotations":{"framerContractVersion":"1"}},"useRadius":{"type":"function","annotations":{"framerContractVersion":"1"}},"RadiusProps":{"type":"tsType","annotations":{"framerContractVersion":"1"}},"PaddingProps":{"type":"tsType","annotations":{"framerContractVersion":"1"}},"usePadding":{"type":"function","annotations":{"framerContractVersion":"1"}},"paddingControl":{"type":"variable","annotations":{"framerContractVersion":"1"}}}}
+//# sourceMappingURL=https://framerusercontent.com/modules/5SM58HxZHxjjv7aLMOgQ/WXz9i6mVki0bBCrKdqB3/propUtils.map
+//# sourceURL=https://framerusercontent.com/modules/5SM58HxZHxjjv7aLMOgQ/WXz9i6mVki0bBCrKdqB3/propUtils.js

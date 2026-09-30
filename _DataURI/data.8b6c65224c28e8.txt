@@ -1,0 +1,21 @@
+import { useEffect } from /*"react"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/42cb2ed1-a23c-4f40-9412-9db6de069d12';
+//@ts-ignore
+import { isMotionValue } from /*"https://framerusercontent.com/modules/3mKFSGQqKHV82uOV1eBc/5fbRLvOpxZC0JOXugvwm/isMotionValue.js"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/6359a756-863a-4ae1-8802-94747792e8d6';
+export function useOnChange(value, callback) {
+    useEffect(()=>// @ts-ignore this should be detected as a MV :shrug:
+        isMotionValue(value) ? value.onChange(callback) : undefined
+    );
+}
+export function useMultiOnChange(values, handler) {
+    useEffect(()=>{
+        const subscriptions = values.map((value)=>value.onChange(handler)
+        );
+        return ()=>subscriptions.forEach((unsubscribe)=>unsubscribe()
+            )
+        ;
+    });
+}
+
+export const __FramerMetadata__ = {"exports":{"Subscriber":{"type":"tsType","annotations":{"framerContractVersion":"1"}},"useOnChange":{"type":"function","annotations":{"framerContractVersion":"1"}},"useMultiOnChange":{"type":"function","annotations":{"framerContractVersion":"1"}}}}
+//# sourceMappingURL=https://framerusercontent.com/modules/v9AWX2URmiYsHf7GbctE/XxKAZ9KlhWqf5x1JMyyF/useOnChange.map
+//# sourceURL=https://framerusercontent.com/modules/v9AWX2URmiYsHf7GbctE/XxKAZ9KlhWqf5x1JMyyF/useOnChange.js

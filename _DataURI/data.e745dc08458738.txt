@@ -1,0 +1,7 @@
+import { MotionValue } from /*"framer"*/'blob:https://site-8a30006c899d0745c3a710357e15fd182c9e9b24ba3f4c55e16da0b9cb.framercanvas.com/a7a92758-e9b8-4776-ac7c-f47c05a495ba';
+export const isMotionValue = (v)=>v instanceof MotionValue
+;
+
+export const __FramerMetadata__ = {"exports":{"isMotionValue":{"type":"variable","annotations":{"framerContractVersion":"1"}}}}
+//# sourceMappingURL=https://framerusercontent.com/modules/3mKFSGQqKHV82uOV1eBc/5fbRLvOpxZC0JOXugvwm/isMotionValue.map
+//# sourceURL=https://framerusercontent.com/modules/3mKFSGQqKHV82uOV1eBc/5fbRLvOpxZC0JOXugvwm/isMotionValue.js
